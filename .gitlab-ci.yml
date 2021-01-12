@@ -25,6 +25,7 @@ init:
 validate:
   stage: validate
   script:
+    - gitlab-terraform init
     - gitlab-terraform validate
 
 plan:
