@@ -1,4 +1,3 @@
-
 data "aws_ami" "ubuntu" {
   most_recent = true
   filter {
@@ -21,6 +20,9 @@ resource "aws_instance" "main" {
   key_name               = var.ssh_key_name
   vpc_security_group_ids = [aws_security_group.base.id]
   private_ip             = var.main_instance_private_ip
+  tags = {
+    Name = "terraform-gitlab-example"
+  }
 }
 
 resource "aws_security_group" "base" {
