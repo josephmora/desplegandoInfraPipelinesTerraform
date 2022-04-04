@@ -20,6 +20,7 @@ stages:
 init:
   stage: prepare
   script:
+    - echo $TF_ADDRESS
     - gitlab-terraform init
 
 validate:
